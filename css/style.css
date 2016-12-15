@@ -1,0 +1,103 @@
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+html,
+body,
+.map {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* Optional: Makes the sample page fill the window. */
+/*html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}*/
+
+.search-container {
+  position: absolute;
+  z-index: 3;
+  border: solid 5px red;
+}
+
+.search-area {
+  max-height: 100%;
+  overflow: auto;
+  font-size: 1em;
+  display: block;
+  /*z-index: 2;*/
+  border: solid 3px blue;
+  left: 1%;
+  top: 2%;
+}
+.location-list{
+  padding: 0;
+  z-index: 1;
+  margin: 0 5px;
+}
+.search-input {
+  padding: 15px 20px;
+  font-size: 1.5em;
+}
+
+.location-item {
+  z-index: 2;
+  padding: 10px;
+  margin: 0;
+  background-color: white;
+  list-style-type: none;
+  text-align: center;
+  border: solid black 1px;
+}
+
+.location-item:hover {
+  background-color: blue;
+  color: black;
+}
+
+.loaded,
+.not-loaded {
+  color: black;
+  font: 20px sans-serif;
+  padding: 20px;
+}
+
+.loaded {
+  border: 3px solid #438344;
+  background-color: #93bf93;
+}
+
+@media (max-width:600px) {
+  .location-list {
+    z-index: 3;
+    opacity: 0.5;
+  }
+}
+
+#arrow {
+    height: 50px;
+    width: 50px;
+}
+
+#arrow-container {
+    background-color: green;
+    opacity: 0.9;
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.search-input {
+  width: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.not-loaded {
+  border: 3px solid #cd0e3e;
+  background-color: #eb6083;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>San Francisco Bakeries</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=yes">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+        <div class="search-container" id="search-container">
+      <div class="search-area" id="search-area">
+        <input class="search-input" placeholder="Search for Places..." type="text" name="q" autocomplete="off" data-bind="value: query, valueUpdate: 'keyup'">
+        <ul class="location-list" data-bind="visible: true, template: {name: 'location', foreach: search}">
+        </ul>
+      </div>
+              <div class="arrow-container" id="arrow-container">
+          <img class="arrow" id="arrow" src="img/up_arrow.gif" alt="arrow image">
+        </div>
+    </div>
+    <!--<div id="map-canvas"></div>-->
+    <script type="text/html" id="location">
+        <li class="location-item" data-bind="text: title, click: openInfowindow"></li>
+    </script>
+    <div id="map" class="map"></div>
+
+
+
+    <script>
+    var map;
+    function initMap() {
+      var mapOptions = {
+        zoom: 12,
+        center: new google.maps.LatLng(37.773972, -122.431297),
+        disableDefaultUI: true
+      };
+      console.log("initialize() running...");
+      map = new google.maps.Map(document.getElementById('map'),
+        mapOptions);
+    }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDN2I1K0VFHZbcWX9kpR8yOOhqhlEOwS5o&callback=initMap" type="text/javascript" onerror="googleError()"></script>
+    <script src="js/jQuery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <!--<script src="js/error.js"></script>-->
+    
+</body>
+</html>
