@@ -50,7 +50,7 @@ var Location = function(title, lng, lat, id) {
       };
 
     this.openInfowindow = function() {
-        for (i=0; i < locationsModel.locations.length; i++) {
+        for (var i=0; i < locationsModel.locations.length; i++) {
             locationsModel.locations[i].infowindow.close();
         }
         map.panTo(self.marker.getPosition());
